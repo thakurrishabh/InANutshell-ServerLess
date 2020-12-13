@@ -1,0 +1,11 @@
+{
+    "dev": {
+        "aws_region": "us-east-1",
+        "django_settings": "inanutshell.settings",
+        "profile_name": "default",
+        "s3_bucket": "zappa-bovmzrv1i",
+        "aws_region": "us-east-1",
+        "certificate_arn": "arn:aws:acm:us-east-1:678411692940:certificate/5c9f1941-1721-4ff6-bdcc-4f4cf5d78a6f",
+        "domain": "inanutshell.site"
+    }
+}

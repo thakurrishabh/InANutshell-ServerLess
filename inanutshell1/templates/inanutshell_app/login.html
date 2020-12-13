@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+{% load static %}
+{% load socialaccount %}
+{% load get_user %}
+<html lang="zxx">
+<!-- Head -->
+
+<head>
+    <title>Login</title>
+    <!-- Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Key Login Form a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta-Tags -->
+    <!-- Index-Page-CSS -->
+    <link rel="stylesheet" href="{% static 'inanutshell_app/assets/css/style_index.css' %}" type="text/css" media="all">
+    <!-- //Custom-Stylesheet-Links -->
+    <!--fonts -->
+    <!-- //fonts -->
+    <link rel="stylesheet" href="{% static 'inanutshell_app/assets/css/font-awesome1.min.css' %}" type="text/css" media="all">
+    <!-- //Font-Awesome-File-Links -->
+	<meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+	<!-- Google fonts -->
+	<link href="//fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700,700i" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Mukta:200,300,400,500,600,700,800" rel="stylesheet">
+	<!-- Google fonts -->
+
+</head>
+<!-- //Head -->
+<!-- Body -->
+
+<body>
+
+<section class="main">
+	<div class="layer">
+		
+		<div class="content-w3ls" style="background-color: rgba(0, 0, 0, 0.2)" id="rcorners2">
+		    <div style=" display: flex; justify-content: center;" >
+                <h1 style="font-family: Verdana, Geneva, sans-serif; font-size:60px; color: black">InA<em style="color: #f33f3f">Nutshell</em></h1>
+            </div>
+			<div class="text-center icon"  style=" display: flex; justify-content: center;">
+				<span class='icon1' ></span>
+			</div>
+			<div class="content-bottom" >
+			 {% if user.is_authenticated %}
+				{% with guser=user.email|get_user %}
+					<h1 style="color: aliceblue; text-align: center;">Welcome, {{ guser }} !</h1>
+					<meta http-equiv="refresh" content="0; URL={% url 'index' un=guser %}" />
+				{%endwith%}
+             {% else %}
+                 
+  
+			<div style=" display: flex; justify-content: center;" >
+          
+                  <div class='g-sign-in-button'>
+                     <a href="{% provider_login_url 'google' action='reauthenticate' %}" >
+                      <div class=content-wrapper>
+                            <div class='logo-wrapper'>  
+                                <img src='https://developers.google.com/identity/images/g-logo.png'>
+                            </div>  
+                            <span class='text-container'> 
+                              <span style='color: white'>Sign in with Google</span>
+                            </span>
+                      </div>  
+                     </a>
+                  </div>
+
+            </div>           
+               
+                <br>
+				<form action="#" method="post">
+					<div class="field-group">
+						<span class="fa fa-user" aria-hidden="true"></span>
+						<div class="wthree-field">
+							<input name="text1" id="text1" type="text" value="" placeholder="Username" required>
+						</div>
+					</div>
+					<div class="field-group">
+						<span class="fa fa-lock" aria-hidden="true"></span>
+						<div class="wthree-field">
+							<input name="password" id="myInput" type="Password" placeholder="Password">
+						</div>
+					</div>
+					<div class="wthree-field">
+						<button type="submit" class="btn">Get Started</button>
+					</div>
+					<ul class="list-login">
+						<li class="switch-agileits" >
+							<label class="switch">
+								<input type="checkbox">
+								<span class="slider round"></span>
+								keep Logged in
+							</label>
+						</li>
+						<li>
+							<a href="#" class="text-right">forgot password?</a>
+						</li>
+						<li class="clearfix"></li>
+					</ul>
+					<ul class="list-login-bottom">
+						<li class="">
+							<a href="#" class="" style="color: black;">Create Account</a>
+						</li>
+						<li class="">
+							<a href="#" class="text-right">Need Help?</a>
+						</li>
+						<li class="clearfix"></li>
+					</ul>
+				</form>
+				{% endif %}
+			</div>
+		</div>
+		<div class="bottom-grid1">
+
+		</div>
+    </div>
+</section>
+
+</body>
+<!-- //Body -->
+</html>

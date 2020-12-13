@@ -1,0 +1,107 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "hey cloud",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "GetAudioIntent",
+                    "slots": [
+                        {
+                            "name": "audioQuery",
+                            "type": "AUDIOS"
+                        }
+                    ],
+                    "samples": [
+                        "play full {audioQuery}",
+                        "play {audioQuery} file",
+                        "search for {audioQuery}",
+                        "find {audioQuery}",
+                        "play {audioQuery}",
+                        "start playing {audioQuery}",
+                        "put on {audioQuery}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.PauseIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ResumeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "GetRadioIntent",
+                    "slots": [],
+                    "samples": [
+                        "radio"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NextIntent",
+                    "samples": []
+                },
+                {
+                    "name": "ListFileIntent",
+                    "slots": [],
+                    "samples": [
+                        "list files"
+                    ]
+                },
+                {
+                    "name": "GetSmmryAudioIntent",
+                    "slots": [
+                        {
+                            "name": "audiofile",
+                            "type": "AUDIOS"
+                        }
+                    ],
+                    "samples": [
+                        "summary of {audiofile} is",
+                        "summary of {audiofile}",
+                        "summarized version of {audiofile}",
+                        "play summarized version of {audiofile}",
+                        "play summary of {audiofile}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "AUDIOS",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "test"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sample"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "testing"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
